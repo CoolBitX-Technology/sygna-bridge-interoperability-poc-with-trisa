@@ -1,0 +1,11 @@
+FROM trisacrypto/tooling:bazel AS builder
+USER root
+COPY ./packages/trisa-vasp /code
+WORKDIR /code
+RUN make demo-init
+
+FROM frolvlad/alpine-glibc
+COPY --from=builder /code/artifacts/bin/trisa /usr/local/bin/trisa
+COPY --from=builder /code/artifacts/demo /etc/demo-certs-store
+# CMD ["cp -r /etc/demo-certs-store /etc/certs", "&&", "trisa server"]
+CMD ["trisa", "server"]

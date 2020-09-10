@@ -1,0 +1,5 @@
+packages/sygna-gateway/node_modules
+packages/sygna-gateway/dist
+packages/sygna-gateway/src/generated
+packages/trisa-vasp/artifacts
+packages/trisa-vasp/bazel*
