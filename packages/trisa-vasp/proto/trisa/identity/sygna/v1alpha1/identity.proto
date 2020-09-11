@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package trisa.identity.sygna.v1alpha1;
+
+option go_package = "github.com/trisacrypto/trisa/proto/trisa/identity/sygna/v1alpha1";
+
+message Identity {
+    string originator_vasp_code = 1;
+    string beneficiary_vasp_code = 2;
+    bytes encrypted_identity = 3;
+}

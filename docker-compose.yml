@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  # sygna gateway
+  vasp1:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./packages/trisa-vasp/hack/etc/pki/dev/out/vasp1-key.pem:/etc/certs/server.key
+      - ./packages/trisa-vasp/hack/etc/pki/dev/out/vasp1.pem:/etc/certs/server.crt
+      - ./packages/trisa-vasp/hack/etc/pki/dev/out/subca1-chain.pem:/etc/certs/trust.chain
+      - ./config.json:/etc/sygna-gateway/config.json
+  # trisa vasp
+  vasp2:
+    build:
+      context: .
+      dockerfile: Dockerfile.trisa
+    ports:
+      - "8592:8592"
+      - "8092:8092"
+    volumes:
+      - ./packages/trisa-vasp/hack/etc/pki/dev/out/vasp2-key.pem:/etc/certs/server.key
+      - ./packages/trisa-vasp/hack/etc/pki/dev/out/vasp2.pem:/etc/certs/server.crt
+      - ./packages/trisa-vasp/hack/etc/pki/dev/out/subca1-chain.pem:/etc/certs/trust.chain
+      - ./config.json:/etc/trisa/config.json

@@ -1,0 +1,38 @@
+{
+  "sygna": {
+    "stage": "test",
+    "apiKey": "<Your Sygna Bridge API key>",
+    "privateKey": "<Your private key>",
+    "apiVersion": "v2"
+  },
+  "gateway": {
+    "vaspCode": "<Your Sygna Bridge VASP code>",
+    "endpoint": "<Your public endpoint to receive callback from Sygna Bridge>",
+    "restApiPort": "8888",
+    "grpcApiPort": "8877",
+    "tls": {
+      "privateKeyFile": "/etc/certs/server.key",
+      "certificateFile": "/etc/certs/server.crt",
+      "trustChain": "/etc/certs/trust.chain"
+    }
+  },
+  "trisa": {
+    "server": {
+      "endpoint": "vasp2",
+      "restApiPort": "8592",
+      "grpcApiPort": "8092"
+    },
+    "tls": {
+      "privateKeyFile": "/etc/certs/server.key",
+      "certificateFile": "/etc/certs/server.crt",
+      "trustChain": "/etc/certs/trust.chain"
+    },
+    "identity": {
+      "vaspCode": "<Your Sygna Bridge VASP code>",
+      "privateKey": "<Your private key>"
+    },
+    "directory": {
+      "ROBOTWAA": "04c1a0d4269ce2b0e1dab89e8defbfc9c0c780e6b769f1dba7cbc3531c8167ae7f0b49b1a36d574fd0cbb353f5d31152110daa541213cf0919c1be708a112163e3"
+    }
+  }
+}
