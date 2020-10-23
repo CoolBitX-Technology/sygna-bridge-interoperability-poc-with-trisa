@@ -41,12 +41,13 @@ export const startRestServer = async (connMgr: ConnectionManager) => {
     };
     console.log(JSON.stringify(logRequest, null, 2));
     await next();
+    const parsedBody = ctx.body instanceof Buffer ? ctx.body.toString("hex") : ctx.body;
     const logResponse = {
       response: ctx.response,
       status: ctx.status,
       path: ctx.request.url,
       method: ctx.request.method,
-      body: ctx.body,
+      body: parsedBody,
     };
     console.log(JSON.stringify(logResponse, null, 2));
   });

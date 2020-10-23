@@ -20,7 +20,7 @@ message InvoiceRequest {
   optional string recipient_chain_address = 11;              // Recipient's chain address
   // sygna specific fields
   optional string sygna_transfer_id = 12;
-  optional string sygna_encrypted_owner = 13;
+  optional bytes sygna_encrypted_owner = 13;
 }
 
 message PaymentRequest {
