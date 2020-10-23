@@ -1,5 +1,5 @@
-import { CustomKoaContext } from '../types';
-import $ from '../config';
+import { CustomKoaContext } from '../../types';
+import $ from '../../config';
 
 const { crypto: bridgeCrypto } = require('@sygna/bridge-util');
 

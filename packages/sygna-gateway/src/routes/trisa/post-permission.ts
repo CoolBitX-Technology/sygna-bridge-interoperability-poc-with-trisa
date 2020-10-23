@@ -1,7 +1,7 @@
 import { randomBytes } from 'crypto';
 import axios from 'axios';
-import { CustomKoaContext } from '../types';
-import config from '../config';
+import { CustomKoaContext } from '../../types';
+import config from '../../config';
 
 const { crypto: bridgeCrypto } = require('@sygna/bridge-util');
 

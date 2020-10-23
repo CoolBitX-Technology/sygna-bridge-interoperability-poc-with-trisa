@@ -2,12 +2,9 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import bodyparser from 'koa-bodyparser';
 
-import {
-  postPermission,
-  postPermissionRequest,
-  postTxid,
-  postValidateAddress,
-} from '../routes';
+import * as trisaRoute from '../routes/trisa';
+import * as netkiRoute from '../routes/netki';
+
 import { CustomKoaContext } from '../types'
 import ConnectionManager from '../lib/connection-manager';
 import $ from '../config'
@@ -18,15 +15,19 @@ const router = new Router();
 export const startRestServer = async (connMgr: ConnectionManager) => {
   router
     .post(
-      '/transaction/permission-request',
-      postPermissionRequest,
+      '/trisa/transaction/permission-request',
+      trisaRoute.postPermissionRequest,
     )
-    .post('/transaction/permission', postPermission)
+    .post('/trisa/transaction/permission', trisaRoute.postPermission)
     .post(
-      '/transaction/validate-address',
-      postValidateAddress,
+      '/trisa/transaction/validate-address',
+      trisaRoute.postValidateAddress,
     )
-    .post('/transaction/txid', postTxid);
+    .post('/trisa/transaction/txid', trisaRoute.postTxid)
+    .post(
+      '/netki/transaction/permission-request',
+      netkiRoute.postPermissionRequest,
+    );
 
   app.use(bodyparser());
   // log every request
