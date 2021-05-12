@@ -23,7 +23,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.1.3",
+    "@grpc/grpc-js": "^1.1.8",
     "@sygna/bridge-util": "^2.0.0",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
