@@ -28,7 +28,7 @@
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "google-protobuf": "^3.13.0",
-    "grpc": "^1.24.3",
+    "grpc": "^1.24.9",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^9.1.0"
